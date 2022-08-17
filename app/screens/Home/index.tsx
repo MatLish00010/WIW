@@ -5,14 +5,13 @@ import { TouchableOpacity } from '@myapp/theme/Buttons';
 import { RootTabScreenProps } from '@myapp/navigation/types';
 
 const Home = ({ navigation }: RootTabScreenProps<'Home'>) => {
-  const navigateToMenu = () => {
-    navigation.navigate('Menu');
-  };
-
   return (
     <View style={gStyles.container}>
-      <TouchableOpacity onPress={navigateToMenu}>
+      <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
         <ButtonText>Menu</ButtonText>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ marginTop: 20 }} onPress={() => navigation.navigate('SelectedItems')}>
+        <ButtonText>Selected Items</ButtonText>
       </TouchableOpacity>
     </View>
   );

@@ -3,7 +3,6 @@ import { Platform, StyleSheet } from 'react-native';
 
 import { View } from '@myapp/theme/View';
 import { Text } from '@myapp/theme/Text';
-import EditScreenInfo from '@myapp/components/EditScreenInfo';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,7 +26,6 @@ export default function ModalScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Modal</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/ModalScreen.tsx" />
 
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>

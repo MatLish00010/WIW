@@ -1,19 +1,16 @@
-import { ComponentProps } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { FontAwesome } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Pressable } from 'react-native';
 
 import useColorScheme from '@myapp/hooks/useColorScheme';
 import Home from '@myapp/screens/Home';
+import Menu from '@myapp/screens/Menu';
+import SelectedItems from '@myapp/screens/SelectedItems';
+
 import Colors from '@myapp/theme/Colors';
 import { RootTabParamList, RootTabScreenProps } from '@myapp/navigation/types';
-import Menu from '@myapp/screens/Menu';
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
-
-const TabBarIcon = (props: { name: ComponentProps<typeof FontAwesome>['name']; color: string }) => {
-  return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
-};
 
 const BottomTabNavigator = () => {
   const colorScheme = useColorScheme();
@@ -26,11 +23,21 @@ const BottomTabNavigator = () => {
       }}
     >
       <BottomTab.Screen
+        name="SelectedItems"
+        component={SelectedItems}
+        options={{
+          title: 'Selected Items',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="notebook-check-outline" color={color} size={size} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
         name="Home"
         component={Home}
         options={({ navigation }: RootTabScreenProps<'Home'>) => ({
           title: 'Home',
-          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+          tabBarIcon: ({ color, size }) => <MaterialCommunityIcons name="home" color={color} size={size} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}
@@ -38,7 +45,12 @@ const BottomTabNavigator = () => {
                 opacity: pressed ? 0.5 : 1,
               })}
             >
-              <FontAwesome name="info-circle" size={25} color={Colors[colorScheme].text} style={{ marginRight: 15 }} />
+              <MaterialCommunityIcons
+                name="information-outline"
+                size={25}
+                color={Colors[colorScheme].text}
+                style={{ marginRight: 15 }}
+              />
             </Pressable>
           ),
         })}
@@ -48,7 +60,7 @@ const BottomTabNavigator = () => {
         component={Menu}
         options={{
           title: 'Menu',
-          tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
+          tabBarIcon: ({ color, size }) => <MaterialCommunityIcons name="book-open" color={color} size={size} />,
         }}
       />
     </BottomTab.Navigator>

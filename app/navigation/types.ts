@@ -12,6 +12,7 @@ declare global {
 }
 
 export type RootTabParamList = {
+  SelectedItems: undefined;
   Home: undefined;
   Menu: undefined;
 };
