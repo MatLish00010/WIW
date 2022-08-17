@@ -1,21 +1,21 @@
-import * as React from 'react';
+import { ComponentProps } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome } from '@expo/vector-icons';
 import { Pressable } from 'react-native';
 
 import useColorScheme from '@myapp/hooks/useColorScheme';
-import Colors from '@myapp/constants/Colors';
 import Home from '@myapp/screens/Home';
-import { RootTabParamList, RootTabScreenProps } from '@myapp/layout/types';
-import TabTwoScreen from '@myapp/screens/TabTwoScreen';
+import Colors from '@myapp/theme/Colors';
+import { RootTabParamList, RootTabScreenProps } from '@myapp/navigation/types';
+import Menu from '@myapp/screens/Menu';
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
-function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string }) {
+const TabBarIcon = (props: { name: ComponentProps<typeof FontAwesome>['name']; color: string }) => {
   return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
-}
+};
 
-function BottomTabNavigator() {
+const BottomTabNavigator = () => {
   const colorScheme = useColorScheme();
 
   return (
@@ -44,15 +44,15 @@ function BottomTabNavigator() {
         })}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
+        name="Menu"
+        component={Menu}
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Menu',
+          tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
         }}
       />
     </BottomTab.Navigator>
   );
-}
+};
 
 export default BottomTabNavigator;

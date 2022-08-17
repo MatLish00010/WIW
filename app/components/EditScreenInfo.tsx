@@ -1,7 +1,8 @@
 import { StyleSheet } from 'react-native';
 
 import { MonoText } from './StyledText';
-import { Text, View } from './Themed';
+import { View } from '@myapp/theme/View';
+import { Text } from '@myapp/theme/Text';
 
 const styles = StyleSheet.create({
   getStartedContainer: {

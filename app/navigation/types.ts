@@ -13,11 +13,11 @@ declare global {
 
 export type RootTabParamList = {
   Home: undefined;
-  TabTwo: undefined;
+  Menu: undefined;
 };
 
 export type RootStackParamList = {
-  Root: NavigatorScreenParams<RootTabParamList> | undefined;
+  Tabs: NavigatorScreenParams<RootTabParamList> | undefined;
   Modal: undefined;
   NotFound: undefined;
 };

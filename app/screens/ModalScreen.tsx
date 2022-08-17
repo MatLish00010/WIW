@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { Platform, StyleSheet } from 'react-native';
 
-import { View, Text } from '@myapp/components/Themed';
+import { View } from '@myapp/theme/View';
+import { Text } from '@myapp/theme/Text';
 import EditScreenInfo from '@myapp/components/EditScreenInfo';
 
 const styles = StyleSheet.create({
