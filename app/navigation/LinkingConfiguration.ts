@@ -1,29 +1,18 @@
 import * as Linking from 'expo-linking';
 
 import { LinkingOptions } from '@react-navigation/native';
-import { RootStackParamList } from '@myapp/navigation/types';
+import { RootTabParamList } from '@myapp/navigation/types';
 
-const linking: LinkingOptions<RootStackParamList> = {
+const linking: LinkingOptions<RootTabParamList> = {
   prefixes: [Linking.createURL('/')],
   config: {
     screens: {
-      Tabs: {
+      HomeStack: {
         screens: {
-          Home: {
-            screens: {
-              Home: 'home',
-            },
-          },
-          Menu: {
-            screens: {
-              Menu: 'menu',
-            },
-          },
+          Home: 'home',
+          Menu: 'menu',
         },
       },
-      SelectedItems: 'selectedItems',
-      Modal: 'modal',
-      NotFound: '*',
     },
   },
 };

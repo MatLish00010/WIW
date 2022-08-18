@@ -1,34 +1,15 @@
-import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import { CompositeScreenProps, NavigatorScreenParams } from '@react-navigation/native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { NavigatorScreenParams } from '@react-navigation/native';
+
+import { HomeStackParamList } from '@myapp/navigation/HomeStack/types';
 
 declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace ReactNavigation {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    type RootParamList = RootStackParamList;
+    type RootParamList = RootTabParamList;
   }
 }
 
 export type RootTabParamList = {
-  SelectedItems: undefined;
-  Home: undefined;
-  Menu: undefined;
+  HomeStack: NavigatorScreenParams<HomeStackParamList> | undefined;
 };
-
-export type RootStackParamList = {
-  Tabs: NavigatorScreenParams<RootTabParamList> | undefined;
-  Modal: undefined;
-  NotFound: undefined;
-};
-
-export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<
-  RootStackParamList,
-  Screen
->;
-
-export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
-  BottomTabScreenProps<RootTabParamList, Screen>,
-  NativeStackScreenProps<RootStackParamList>
->;

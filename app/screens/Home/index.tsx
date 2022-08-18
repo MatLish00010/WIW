@@ -1,19 +1,16 @@
-import { View } from '@myapp/theme/View';
+import { ViewContainer } from '@myapp/theme/View';
 import { ButtonText } from '@myapp/theme/Text';
-import { gStyles } from '@myapp/layout/styles';
+import { HomeScreenProps } from '@myapp/navigation/HomeStack/types';
 import { TouchableOpacity } from '@myapp/theme/Buttons';
-import { RootTabScreenProps } from '@myapp/navigation/types';
+import { styles } from '@myapp/screens/Home/styles';
 
-const Home = ({ navigation }: RootTabScreenProps<'Home'>) => {
+const Home = ({ navigation }: HomeScreenProps<'Home'>) => {
   return (
-    <View style={gStyles.container}>
+    <ViewContainer style={styles.container}>
       <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
         <ButtonText>Menu</ButtonText>
       </TouchableOpacity>
-      <TouchableOpacity style={{ marginTop: 20 }} onPress={() => navigation.navigate('SelectedItems')}>
-        <ButtonText>Selected Items</ButtonText>
-      </TouchableOpacity>
-    </View>
+    </ViewContainer>
   );
 };
 
