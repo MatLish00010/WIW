@@ -1,36 +1,25 @@
 import { ColorSchemeName } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { RootTabParamList } from '@myapp/navigation/types';
+import { StackParamList } from '@myapp/navigation/types';
+import Root from '@myapp/navigation/Root';
+import AuthStackScreen from '@myapp/navigation/Auth';
 import LinkingConfiguration from '@myapp/navigation/LinkingConfiguration';
-import HomeStackScreen from '@myapp/navigation/HomeStack';
-import AccountStackScreen from '@myapp/navigation/AccountStack';
 
-const Tab = createBottomTabNavigator<RootTabParamList>();
+const Stack = createNativeStackNavigator<StackParamList>();
 
 const Navigator = ({ colorScheme }: { colorScheme: ColorSchemeName }) => {
   return (
     <NavigationContainer linking={LinkingConfiguration} theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Tab.Navigator>
-        <Tab.Screen
-          options={() => ({
-            headerShown: false,
-            tabBarIcon: ({ color, size }) => <MaterialCommunityIcons name="home" color={color} size={size} />,
-          })}
-          name="HomeStack"
-          component={HomeStackScreen}
-        />
-        <Tab.Screen
-          options={() => ({
-            headerShown: false,
-            tabBarIcon: ({ color, size }) => <MaterialCommunityIcons name="account" color={color} size={size} />,
-          })}
-          name="Account"
-          component={AccountStackScreen}
-        />
-      </Tab.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Root" component={Root} />
+        <Stack.Screen name="AuthStackScreen" component={AuthStackScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

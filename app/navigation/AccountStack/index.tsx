@@ -7,6 +7,7 @@ const AccountStack = createNativeStackNavigator<AccountStackParamList>();
 const AccountStackScreen = () => {
   return (
     <AccountStack.Navigator
+      initialRouteName="Account"
       screenOptions={{
         animation: 'slide_from_left',
       }}

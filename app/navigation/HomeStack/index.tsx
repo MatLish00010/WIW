@@ -8,6 +8,7 @@ const HomeStack = createNativeStackNavigator<HomeStackParamList>();
 const HomeStackScreen = () => {
   return (
     <HomeStack.Navigator
+      initialRouteName="Home"
       screenOptions={{
         animation: 'slide_from_left',
       }}

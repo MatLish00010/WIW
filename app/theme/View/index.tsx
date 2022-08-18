@@ -19,11 +19,11 @@ export const ViewContainer = (props: ViewProps) => {
     <DefaultView
       style={[
         { backgroundColor },
-        style,
         {
           flex: 1,
           padding: 20,
         },
+        style,
       ]}
       {...otherProps}
     />

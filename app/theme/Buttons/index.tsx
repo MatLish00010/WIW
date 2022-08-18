@@ -11,7 +11,6 @@ export const TouchableOpacity = (props: TouchableOpacityProps) => {
     <DefaultTouchableOpacity
       style={[
         { borderColor },
-        style,
         {
           borderWidth: 2,
           paddingVertical: 30,
@@ -19,6 +18,7 @@ export const TouchableOpacity = (props: TouchableOpacityProps) => {
           borderRadius: 10,
           alignItems: 'center',
         },
+        style,
       ]}
       {...otherProps}
     />
