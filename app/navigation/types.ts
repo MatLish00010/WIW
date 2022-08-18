@@ -1,6 +1,7 @@
 import { NavigatorScreenParams } from '@react-navigation/native';
 
 import { HomeStackParamList } from '@myapp/navigation/HomeStack/types';
+import { AccountStackParamList } from '@myapp/navigation/AccountStack/types';
 
 declare global {
   namespace ReactNavigation {
@@ -12,4 +13,5 @@ declare global {
 
 export type RootTabParamList = {
   HomeStack: NavigatorScreenParams<HomeStackParamList> | undefined;
+  Account: NavigatorScreenParams<AccountStackParamList> | undefined;
 };

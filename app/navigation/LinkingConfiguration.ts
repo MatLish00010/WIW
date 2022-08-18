@@ -9,8 +9,13 @@ const linking: LinkingOptions<RootTabParamList> = {
     screens: {
       HomeStack: {
         screens: {
-          Home: 'home',
-          Menu: 'menu',
+          Home: 'Home',
+          Menu: 'Menu',
+        },
+      },
+      Account: {
+        screens: {
+          Account: 'Account',
         },
       },
     },
