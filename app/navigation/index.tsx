@@ -3,9 +3,9 @@ import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { StackParamList } from '@myapp/navigation/types';
-import Root from '@myapp/navigation/Root';
 import AuthStackScreen from '@myapp/navigation/Auth';
 import LinkingConfiguration from '@myapp/navigation/LinkingConfiguration';
+import RootTabs from '@myapp/navigation/RootBottomTabs';
 
 const Stack = createNativeStackNavigator<StackParamList>();
 
@@ -17,7 +17,7 @@ const Navigator = ({ colorScheme }: { colorScheme: ColorSchemeName }) => {
           headerShown: false,
         }}
       >
-        <Stack.Screen name="Root" component={Root} />
+        <Stack.Screen name="Root" component={RootTabs} />
         <Stack.Screen name="AuthStackScreen" component={AuthStackScreen} />
       </Stack.Navigator>
     </NavigationContainer>

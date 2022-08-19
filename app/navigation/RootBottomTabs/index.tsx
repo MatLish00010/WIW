@@ -2,14 +2,22 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HomeStackScreen from '@myapp/navigation/HomeStack';
-import AccountStackScreen from '@myapp/navigation/AccountStack';
-import { RootTabParamList } from '@myapp/navigation/Root/types';
+import useColorScheme from '@myapp/hooks/useColorScheme';
+import Colors from '@myapp/theme/Colors';
+import Account from '@myapp/screens/Account';
+import { RootTabParamList } from '@myapp/navigation/RootBottomTabs/types';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
-const Root = () => {
+const RootTabs = () => {
+  const colorScheme = useColorScheme();
   return (
-    <Tab.Navigator initialRouteName="HomeStack">
+    <Tab.Navigator
+      initialRouteName="HomeStack"
+      screenOptions={{
+        tabBarActiveTintColor: Colors[colorScheme].tint,
+      }}
+    >
       <Tab.Screen
         options={() => ({
           headerShown: false,
@@ -23,11 +31,11 @@ const Root = () => {
           headerShown: false,
           tabBarIcon: ({ color, size }) => <MaterialCommunityIcons name="account" color={color} size={size} />,
         })}
-        name="AccountStack"
-        component={AccountStackScreen}
+        name="Account"
+        component={Account}
       />
     </Tab.Navigator>
   );
 };
 
-export default Root;
+export default RootTabs;

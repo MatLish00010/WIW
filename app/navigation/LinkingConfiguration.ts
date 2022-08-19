@@ -15,11 +15,7 @@ const linking: LinkingOptions<StackParamList> = {
               Menu: 'Menu',
             },
           },
-          AccountStack: {
-            screens: {
-              Account: 'Account',
-            },
-          },
+          Account: 'Account',
         },
       },
       AuthStackScreen: {
