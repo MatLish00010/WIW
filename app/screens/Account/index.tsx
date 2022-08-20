@@ -2,13 +2,15 @@ import { FC } from 'react';
 
 import { ViewContainer } from '@myapp/theme/View';
 import { ButtonText, Text } from '@myapp/theme/Text';
-import { useUser } from '@myapp/hooks/user';
 import { TouchableOpacity } from '@myapp/theme/Buttons';
 import { styles } from '@myapp/screens/Account/styles';
 import { TabScreenProps } from '@myapp/navigation/RootBottomTabs/types';
+import { useAuth } from '@myapp/hooks/useAuth';
 
 const Account: FC<TabScreenProps<'Account'>> = ({ navigation }) => {
-  const { user } = useUser();
+  const { user } = useAuth();
+
+  console.log('user:', user);
 
   if (!user) {
     return (

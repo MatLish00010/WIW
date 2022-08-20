@@ -8,12 +8,7 @@ const AuthStack = createNativeStackNavigator<AuthStackParamList>();
 
 const AuthStackScreen = () => {
   return (
-    <AuthStack.Navigator
-      initialRouteName="SignIn"
-      screenOptions={{
-        animation: 'slide_from_left',
-      }}
-    >
+    <AuthStack.Navigator initialRouteName="SignIn">
       <AuthStack.Screen name="SignIn" component={SignIn} />
       <AuthStack.Screen name="SignUp" component={SignUp} />
     </AuthStack.Navigator>
