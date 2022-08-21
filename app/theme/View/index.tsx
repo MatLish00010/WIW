@@ -43,7 +43,7 @@ export const ViewContainer = (props: ViewProps) => {
         { backgroundColor },
         {
           flex: 1,
-          padding: 20,
+          padding: 40,
         },
         style,
       ]}

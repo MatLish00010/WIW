@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Text } from '@myapp/theme/Text';
 import { View, ViewContainerCenter } from '@myapp/theme/View';
 import { AuthProps } from '@myapp/navigation/Auth/types';
-import styles from '@myapp/screens/SignIn/styles';
+import styles from '@myapp/screens/auth/styles';
 import { tintColorDark, tintColorLight } from '@myapp/theme/Colors';
 import { useAuth } from '@myapp/hooks/useAuth';
 import { ActivityIndicator } from '@myapp/theme/Loader';
@@ -17,7 +17,6 @@ const SignIn = ({ navigation }: AuthProps<'SignIn'>) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async () => {
     await login(email, password);
@@ -52,12 +51,12 @@ const SignIn = ({ navigation }: AuthProps<'SignIn'>) => {
           value={password}
           onChangeText={setPassword}
           autoCapitalize="none"
-          secureTextEntry={!showPassword}
+          secureTextEntry={true}
         />
         <TouchableOpacitySubmit style={styles.submitButton} onPress={handleSubmit}>
-          <Text style={styles.submitButtonText}>Submit</Text>
+          <Text style={styles.submitButtonText}>Sign In</Text>
         </TouchableOpacitySubmit>
-        <TouchableOpacity style={[styles.registerButton]} onPress={() => navigation.navigate('SignUp')}>
+        <TouchableOpacity style={styles.registerButton} onPress={() => navigation.navigate('SignUp')}>
           <Text lightColor={tintColorLight} darkColor={tintColorDark} style={styles.buttonText}>
             Register
           </Text>

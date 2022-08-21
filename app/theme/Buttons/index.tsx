@@ -5,6 +5,14 @@ import { TouchableOpacityProps } from '@myapp/theme/Buttons/types';
 export const TouchableOpacity = (props: TouchableOpacityProps) => {
   const { style, lightColor, darkColor, ...otherProps } = props;
 
+  const background = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
+
+  return <DefaultTouchableOpacity style={[{ backgroundColor: background }, style]} {...otherProps} />;
+};
+
+export const TouchableOpacityStyled = (props: TouchableOpacityProps) => {
+  const { style, lightColor, darkColor, ...otherProps } = props;
+
   const borderColor = useThemeColor({ light: lightColor, dark: darkColor }, 'borderColor');
 
   return (

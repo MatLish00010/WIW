@@ -2,14 +2,14 @@ import { FC } from 'react';
 
 import { ViewContainer } from '@myapp/theme/View';
 import { ButtonText } from '@myapp/theme/Text';
-import { TouchableOpacity } from '@myapp/theme/Buttons';
+import { TouchableOpacityStyled } from '@myapp/theme/Buttons';
 import { styles } from '@myapp/screens/Home/styles';
 import { HomeProps } from '@myapp/navigation/HomeStack/types';
 
 const Home: FC<HomeProps<'Home'>> = ({ navigation }) => {
   return (
     <ViewContainer style={styles.container}>
-      <TouchableOpacity
+      <TouchableOpacityStyled
         onPress={() =>
           navigation.navigate('Root', {
             screen: 'HomeStack',
@@ -20,7 +20,7 @@ const Home: FC<HomeProps<'Home'>> = ({ navigation }) => {
         }
       >
         <ButtonText>Menu</ButtonText>
-      </TouchableOpacity>
+      </TouchableOpacityStyled>
     </ViewContainer>
   );
 };
