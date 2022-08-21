@@ -24,3 +24,11 @@ export const TouchableOpacity = (props: TouchableOpacityProps) => {
     />
   );
 };
+
+export const TouchableOpacitySubmit = (props: TouchableOpacityProps) => {
+  const { style, lightColor, darkColor, ...otherProps } = props;
+
+  const submitButtonBackground = useThemeColor({ light: lightColor, dark: darkColor }, 'submitButtonBackground');
+
+  return <DefaultTouchableOpacity style={[{ backgroundColor: submitButtonBackground }, style]} {...otherProps} />;
+};

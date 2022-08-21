@@ -10,6 +10,8 @@ export default {
     borderColor: tintColorLight,
     tabIconSelected: tintColorLight,
     activityIndicator: tintColorLight,
+    inputPlaceholderColor: '#65737e',
+    submitButtonBackground: tintColorLight,
   },
   dark: {
     text: '#fff',
@@ -19,5 +21,7 @@ export default {
     borderColor: tintColorDark,
     tabIconSelected: tintColorDark,
     activityIndicator: tintColorLight,
+    inputPlaceholderColor: '#65737e',
+    submitButtonBackground: tintColorLight,
   },
 };
