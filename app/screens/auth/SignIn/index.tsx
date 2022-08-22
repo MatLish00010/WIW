@@ -6,20 +6,19 @@ import { View, ViewContainerCenter } from '@myapp/theme/View';
 import { AuthProps } from '@myapp/navigation/Auth/types';
 import styles from '@myapp/screens/auth/styles';
 import { tintColorDark, tintColorLight } from '@myapp/theme/Colors';
-import { useAuth } from '@myapp/hooks/useAuth';
 import { ActivityIndicator } from '@myapp/theme/Loader';
 import { TextInput } from '@myapp/theme/Fields';
 import { TouchableOpacitySubmit } from '@myapp/theme/Buttons';
-import { login } from '@myapp/firebase';
+import { useSignIn } from '@myapp/screens/auth/SignIn/query';
 
 const SignIn = ({ navigation }: AuthProps<'SignIn'>) => {
-  const { isLoading } = useAuth();
+  const { isLoading, mutateAsync: signInHandler } = useSignIn();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async () => {
-    await login(email, password);
+    await signInHandler({ email, password });
     setEmail('');
     setPassword('');
 
@@ -58,7 +57,7 @@ const SignIn = ({ navigation }: AuthProps<'SignIn'>) => {
         </TouchableOpacitySubmit>
         <TouchableOpacity style={styles.registerButton} onPress={() => navigation.navigate('SignUp')}>
           <Text lightColor={tintColorLight} darkColor={tintColorDark} style={styles.buttonText}>
-            Register
+            Sign Up
           </Text>
         </TouchableOpacity>
       </View>

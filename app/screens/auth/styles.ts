@@ -6,6 +6,10 @@ export default StyleSheet.create({
     justifyContent: 'center',
     width: '80%',
   },
+  errorText: {
+    color: 'red',
+    marginVertical: 10,
+  },
   title: {
     fontSize: 20,
     fontWeight: '600',
@@ -24,6 +28,7 @@ export default StyleSheet.create({
     borderBottomWidth: 2,
     paddingVertical: 5,
     width: '100%',
+    marginBottom: 10,
   },
   submitButton: {
     width: '80%',

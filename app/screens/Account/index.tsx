@@ -1,21 +1,29 @@
 import { FC } from 'react';
 
-import { ViewContainer } from '@myapp/theme/View';
+import { ViewContainer, ViewContainerCenter } from '@myapp/theme/View';
 import { ButtonText, Text } from '@myapp/theme/Text';
 import { TouchableOpacityStyled, TouchableOpacitySubmit } from '@myapp/theme/Buttons';
 import { styles } from '@myapp/screens/Account/styles';
 import { TabScreenProps } from '@myapp/navigation/RootBottomTabs/types';
-import { useAuth } from '@myapp/hooks/useAuth';
-import { logout } from '@myapp/firebase';
+import useLogout from '@myapp/query/useLogout';
+import { ActivityIndicator } from '@myapp/theme/Loader';
+import useUser from '@myapp/hooks/useUser';
 
 const Account: FC<TabScreenProps<'Account'>> = ({ navigation }) => {
-  const { user } = useAuth();
-
-  console.log('user:', user);
+  const { user } = useUser();
+  const { isLoading, mutateAsync: logoutHandler } = useLogout();
 
   const handleLogout = async () => {
-    await logout();
+    await logoutHandler();
   };
+
+  if (isLoading) {
+    return (
+      <ViewContainerCenter>
+        <ActivityIndicator />
+      </ViewContainerCenter>
+    );
+  }
 
   if (!user) {
     return (
