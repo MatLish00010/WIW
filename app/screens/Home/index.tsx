@@ -1,15 +1,13 @@
 import { FC } from 'react';
 
-import { ViewContainer } from '@myapp/theme/View';
-import { ButtonText } from '@myapp/theme/Text';
-import { TouchableOpacityStyled } from '@myapp/theme/Buttons';
-import { styles } from '@myapp/screens/Home/styles';
+import { UIViewContainer } from '@myapp/ui/View';
+import { UIButton, UIButtonText } from '@myapp/ui/Button';
 import { HomeProps } from '@myapp/navigation/HomeStack/types';
 
 const Home: FC<HomeProps<'Home'>> = ({ navigation }) => {
   return (
-    <ViewContainer style={styles.container}>
-      <TouchableOpacityStyled
+    <UIViewContainer>
+      <UIButton
         onPress={() =>
           navigation.navigate('Root', {
             screen: 'HomeStack',
@@ -19,9 +17,9 @@ const Home: FC<HomeProps<'Home'>> = ({ navigation }) => {
           })
         }
       >
-        <ButtonText>Menu</ButtonText>
-      </TouchableOpacityStyled>
-    </ViewContainer>
+        <UIButtonText>Menu</UIButtonText>
+      </UIButton>
+    </UIViewContainer>
   );
 };
 

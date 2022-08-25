@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
+import { ActivityIndicator } from 'react-native';
 
-import { Text } from '@myapp/theme/Text';
-import { View, ViewContainerCenter } from '@myapp/theme/View';
-import { ActivityIndicator } from '@myapp/theme/Loader';
 import { AuthProps } from '@myapp/navigation/Auth/types';
-import styles from '@myapp/screens/auth/styles';
-import { TextInput } from '@myapp/theme/Fields';
-import { TouchableOpacitySubmit } from '@myapp/theme/Buttons';
 import { useSignUp } from '@myapp/screens/auth/SignUp/query';
+import { UIView, UIViewContainer } from '@myapp/ui/View';
+import { UIText } from '@myapp/ui/Text';
+import { UIInput } from '@myapp/ui/Fields';
+import { palette, spacing } from '@myapp/ui/Theme';
+import { UIButton, UIButtonText } from '@myapp/ui/Button';
 
 const SignUp = ({ navigation }: AuthProps<'SignUp'>) => {
   const { mutateAsync: signUpHandler, isLoading } = useSignUp();
@@ -39,37 +39,37 @@ const SignUp = ({ navigation }: AuthProps<'SignUp'>) => {
 
   if (isLoading) {
     return (
-      <ViewContainerCenter>
-        <ActivityIndicator />
-      </ViewContainerCenter>
+      <UIViewContainer width="100%" alignItems="center" justifyContent="center">
+        <ActivityIndicator size="large" color={palette.blue} />
+      </UIViewContainer>
     );
   }
 
   return (
-    <ViewContainerCenter>
-      <View style={styles.formContainer}>
-        <Text style={styles.title}>Sign Up</Text>
-        {error && <Text style={styles.errorText}>Email and Password are required</Text>}
-        <TextInput
-          style={styles.input}
-          placeholder="Email"
-          autoCapitalize="none"
-          value={email}
-          onChangeText={setEmail}
-        />
-        <TextInput
-          style={styles.input}
+    <UIViewContainer justifyContent="center" alignItems="center">
+      <UIView width="100%" alignItems="center" justifyContent="center">
+        <UIText fontSize="20px" fontWeight="600">
+          Sign Up
+        </UIText>
+        {error && (
+          <UIText mt={spacing.M} variant="Error">
+            Email and Password are required
+          </UIText>
+        )}
+        <UIInput mb={spacing.M} placeholder="Email" autoCapitalize="none" value={email} onChangeText={setEmail} />
+        <UIInput
           placeholder="Password"
           value={password}
           onChangeText={setPassword}
           autoCapitalize="none"
           secureTextEntry={true}
+          mb={spacing.XL}
         />
-        <TouchableOpacitySubmit style={styles.submitButton} onPress={handleSubmit}>
-          <Text style={styles.submitButtonText}>Sign Up</Text>
-        </TouchableOpacitySubmit>
-      </View>
-    </ViewContainerCenter>
+        <UIButton onPress={handleSubmit} width="80%">
+          <UIButtonText>Sign Up</UIButtonText>
+        </UIButton>
+      </UIView>
+    </UIViewContainer>
   );
 };
 

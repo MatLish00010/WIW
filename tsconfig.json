@@ -8,6 +8,9 @@
         "app/*"
       ]
     },
+    "types": [
+      "styled-components-react-native"
+    ],
     "strict": true
   }
 }

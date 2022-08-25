@@ -2,20 +2,18 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HomeStackScreen from '@myapp/navigation/HomeStack';
-import useColorScheme from '@myapp/hooks/useColorScheme';
-import Colors from '@myapp/theme/Colors';
 import Account from '@myapp/screens/Account';
 import { RootTabParamList } from '@myapp/navigation/RootBottomTabs/types';
+import { palette } from '@myapp/ui/Theme';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 const RootTabs = () => {
-  const colorScheme = useColorScheme();
   return (
     <Tab.Navigator
       initialRouteName="HomeStack"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarActiveTintColor: palette.blue,
       }}
     >
       <Tab.Screen

@@ -1,13 +1,14 @@
 import { FC } from 'react';
 
-import { ViewContainer, ViewContainerCenter } from '@myapp/theme/View';
-import { ButtonText, Text } from '@myapp/theme/Text';
-import { TouchableOpacityStyled, TouchableOpacitySubmit } from '@myapp/theme/Buttons';
-import { styles } from '@myapp/screens/Account/styles';
 import { TabScreenProps } from '@myapp/navigation/RootBottomTabs/types';
 import useLogout from '@myapp/query/useLogout';
-import { ActivityIndicator } from '@myapp/theme/Loader';
+import { ActivityIndicator } from 'react-native';
+
 import useUser from '@myapp/hooks/useUser';
+import { UIButtonText, UIButton } from '@myapp/ui/Button';
+import { UIText } from '@myapp/ui/Text';
+import { palette, spacing } from '@myapp/ui/Theme';
+import { UIView, UIViewContainer } from '@myapp/ui/View';
 
 const Account: FC<TabScreenProps<'Account'>> = ({ navigation }) => {
   const { user } = useUser();
@@ -19,34 +20,31 @@ const Account: FC<TabScreenProps<'Account'>> = ({ navigation }) => {
 
   if (isLoading) {
     return (
-      <ViewContainerCenter>
-        <ActivityIndicator />
-      </ViewContainerCenter>
+      <UIView justifyContent="center" alignItems="center">
+        <ActivityIndicator size="large" color={palette.blue} />
+      </UIView>
     );
   }
 
   if (!user) {
     return (
-      <ViewContainer style={styles.container}>
-        <Text style={styles.text}>You must be logged in to access your account.</Text>
-        <TouchableOpacityStyled
-          onPress={() => navigation.navigate('AuthStackScreen', { screen: 'SignIn' })}
-          style={styles.loginButton}
-        >
-          <ButtonText>Sign In</ButtonText>
-        </TouchableOpacityStyled>
-      </ViewContainer>
+      <UIView alignItems="center" justifyContent="center">
+        <UIText mb={spacing.XL}>You must be logged in to access your account.</UIText>
+        <UIButton onPress={() => navigation.navigate('AuthStackScreen', { screen: 'SignIn' })}>
+          <UIButtonText>Sign In</UIButtonText>
+        </UIButton>
+      </UIView>
     );
   }
 
   return (
-    <ViewContainer>
-      <Text>Account</Text>
-      <Text>Email: {user.email}</Text>
-      <TouchableOpacitySubmit onPress={handleLogout} style={styles.logoutButton}>
-        <Text style={styles.logoutButtonText}>Logout</Text>
-      </TouchableOpacitySubmit>
-    </ViewContainer>
+    <UIViewContainer>
+      <UIText mb={spacing.M}>Account</UIText>
+      <UIText mb={spacing.M}>Email: {user.email}</UIText>
+      <UIButton variant={'Error'} mt={spacing.XXL} onPress={handleLogout}>
+        <UIButtonText>Logout</UIButtonText>
+      </UIButton>
+    </UIViewContainer>
   );
 };
 
