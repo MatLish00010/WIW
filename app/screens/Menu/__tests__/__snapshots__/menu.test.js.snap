@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu Test Page present 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "height": "100%",
+        "paddingBottom": 32,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 40,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000",
+          "fontSize": 16,
+        },
+      ]
+    }
+  >
+    Menu
+  </Text>
+</View>
+`;
