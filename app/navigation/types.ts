@@ -1,6 +1,6 @@
 import { NavigatorScreenParams } from '@react-navigation/native';
 
-import { AuthStackParamList } from '@myapp/navigation/Auth/types';
+import { AuthStackParamList } from '@myapp/navigation/AuthStack/types';
 import { RootTabParamList } from '@myapp/navigation/RootBottomTabs/types';
 
 declare global {
@@ -13,5 +13,5 @@ declare global {
 
 export type StackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
-  AuthStackScreen: NavigatorScreenParams<AuthStackParamList> | undefined;
+  AuthStackNavigator: NavigatorScreenParams<AuthStackParamList> | undefined;
 };

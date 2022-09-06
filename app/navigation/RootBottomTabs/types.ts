@@ -5,7 +5,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { StackParamList } from '@myapp/navigation/types';
 
 export type RootTabParamList = {
-  HomeStack: NavigatorScreenParams<HomeStackParamList>;
+  HomeStackNavigator: NavigatorScreenParams<HomeStackParamList>;
   Account: undefined;
 };
 

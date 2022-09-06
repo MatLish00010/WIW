@@ -30,7 +30,7 @@ const Account: FC<TabScreenProps<'Account'>> = ({ navigation }) => {
     return (
       <UIView alignItems="center" justifyContent="center">
         <UIText mb={spacing.XL}>You must be logged in to access your account.</UIText>
-        <UIButton onPress={() => navigation.navigate('AuthStackScreen', { screen: 'SignIn' })}>
+        <UIButton onPress={() => navigation.navigate('AuthStackNavigator', { screen: 'SignIn' })}>
           <UIButtonText>Sign In</UIButtonText>
         </UIButton>
       </UIView>

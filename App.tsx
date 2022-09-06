@@ -5,13 +5,11 @@ import { LogBox } from 'react-native';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import useCachedResources from '@myapp/hooks/useCachedResources';
-import useColorScheme from '@myapp/hooks/useColorScheme';
 import Navigation from '@myapp/navigation';
 import { ThemeManager } from '@myapp/ui/ThemeManager';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
-  const colorScheme = useColorScheme();
 
   const queryClient = new QueryClient();
 
@@ -22,7 +20,7 @@ export default function App() {
       <SafeAreaProvider>
         <ThemeManager>
           <QueryClientProvider client={queryClient}>
-            <Navigation colorScheme={colorScheme} />
+            <Navigation />
             <StatusBar />
           </QueryClientProvider>
         </ThemeManager>

@@ -5,7 +5,7 @@ import { HomeStackParamList } from '@myapp/navigation/HomeStack/types';
 
 const HomeStack = createNativeStackNavigator<HomeStackParamList>();
 
-const HomeStackScreen = () => {
+const HomeStackNavigator = () => {
   return (
     <HomeStack.Navigator
       initialRouteName="Home"
@@ -25,4 +25,4 @@ const HomeStackScreen = () => {
   );
 };
 
-export default HomeStackScreen;
+export default HomeStackNavigator;

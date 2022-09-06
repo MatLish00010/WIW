@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ActivityIndicator } from 'react-native';
 
-import { AuthProps } from '@myapp/navigation/Auth/types';
+import { AuthProps } from '@myapp/navigation/AuthStack/types';
 import { useSignIn } from '@myapp/screens/auth/SignIn/query';
 import { UIInput } from '@myapp/ui/Fields';
 import { palette, spacing } from '@myapp/ui/Theme';

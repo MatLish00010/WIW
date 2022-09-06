@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ActivityIndicator } from 'react-native';
 
-import { AuthProps } from '@myapp/navigation/Auth/types';
+import { AuthProps } from '@myapp/navigation/AuthStack/types';
 import { useSignUp } from '@myapp/screens/auth/SignUp/query';
 import { UIView, UIViewContainer } from '@myapp/ui/View';
 import { UIText } from '@myapp/ui/Text';

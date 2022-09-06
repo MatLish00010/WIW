@@ -9,7 +9,7 @@ const linking: LinkingOptions<StackParamList> = {
     screens: {
       Root: {
         screens: {
-          HomeStack: {
+          HomeStackNavigator: {
             screens: {
               Home: 'Home',
               Menu: 'Menu',
@@ -18,7 +18,7 @@ const linking: LinkingOptions<StackParamList> = {
           Account: 'Account',
         },
       },
-      AuthStackScreen: {
+      AuthStackNavigator: {
         screens: {
           SignIn: 'SignIn',
           SignUp: 'SignUp',
