@@ -6,7 +6,7 @@ import { MenuScreenProps } from '@myapp/screens/Menu/types';
 
 const Menu: FC<MenuScreenProps<'Menu'>> = () => {
   return (
-    <UIViewContainer testID="menu-page">
+    <UIViewContainer testID="menu-screen">
       <UIText>Menu</UIText>
     </UIViewContainer>
   );

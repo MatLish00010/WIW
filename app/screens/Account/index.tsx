@@ -28,9 +28,9 @@ const Account: FC<TabScreenProps<'Account'>> = ({ navigation }) => {
 
   if (!user) {
     return (
-      <UIView alignItems="center" justifyContent="center">
+      <UIView testID={'account-screen'} alignItems="center" justifyContent="center">
         <UIText mb={spacing.XL}>You must be logged in to access your account.</UIText>
-        <UIButton onPress={() => navigation.navigate('AuthStackNavigator', { screen: 'SignIn' })}>
+        <UIButton testID="signIn-btn" onPress={() => navigation.navigate('AuthStackNavigator', { screen: 'SignIn' })}>
           <UIButtonText>Sign In</UIButtonText>
         </UIButton>
       </UIView>
@@ -38,7 +38,7 @@ const Account: FC<TabScreenProps<'Account'>> = ({ navigation }) => {
   }
 
   return (
-    <UIViewContainer>
+    <UIViewContainer testID={'account-screen'}>
       <UIText mb={spacing.M}>Account</UIText>
       <UIText mb={spacing.M}>Email: {user.email}</UIText>
       <UIButton variant={'Error'} mt={spacing.XXL} onPress={handleLogout}>

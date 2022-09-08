@@ -6,8 +6,8 @@ import { HomeProps } from '@myapp/navigation/HomeStack/types';
 
 const Home: FC<HomeProps<'Home'>> = ({ navigation }) => {
   return (
-    <UIViewContainer testID="home-page">
-      <UIButton testID="menu-button" onPress={() => navigation.navigate('Menu')}>
+    <UIViewContainer testID="home-screen">
+      <UIButton testID="menu-btn" onPress={() => navigation.navigate('Menu')}>
         <UIButtonText>Menu</UIButtonText>
       </UIButton>
     </UIViewContainer>

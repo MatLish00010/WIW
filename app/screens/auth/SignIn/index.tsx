@@ -43,7 +43,7 @@ const SignIn = ({ navigation }: AuthProps<'SignIn'>) => {
   }
 
   return (
-    <UIViewContainer justifyContent="center" alignItems="center">
+    <UIViewContainer testID="signIn-page" justifyContent="center" alignItems="center">
       <UIView width="100%" alignItems="center" justifyContent="center">
         <UIText fontSize="20px" fontWeight="600">
           Sign In

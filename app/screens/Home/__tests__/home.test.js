@@ -1,31 +1,23 @@
 import renderer from 'react-test-renderer';
+import { fireEvent, render, screen } from '@testing-library/react-native';
+
 import renderWithTheme from '@myapp/utils/tests/renderWithTheme';
-import { NavigationContainer } from '@react-navigation/native';
 
 import Home from '@myapp/screens/Home';
-import { fireEvent, screen, render } from '@testing-library/react-native';
-import Menu from '@myapp/screens/Menu';
+import renderWithAllWrappers from '@myapp/utils/tests/renderWithAllWrappers';
+import HomeStackNavigator from '@myapp/navigation/HomeStack';
 
-describe('Home Page Test', () => {
-  test('Page is correct', () => {
+describe('Home Screen Test', () => {
+  test('Screen is correct', () => {
     const tree = renderer.create(renderWithTheme(<Home />)).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('Menu button works', async () => {
-    const navigate = jest.fn();
-    render(
-      renderWithTheme(
-        <NavigationContainer>
-          <Home navigation={{ navigate }} />
-          <Menu />
-        </NavigationContainer>,
-      ),
-    );
+  test('Menu button redirects to menu', () => {
+    render(renderWithAllWrappers(<HomeStackNavigator />));
 
-    const menuButton = screen.getByTestId('menu-button');
-    fireEvent.press(menuButton);
+    const menuBtn = screen.getByTestId('menu-btn');
+    fireEvent.press(menuBtn);
 
-    const menuPage = await screen.findByTestId('menu-page');
-    expect(menuPage).toBeTruthy();
+    expect(screen.getByTestId('menu-screen')).toBeTruthy();
   });
 });
