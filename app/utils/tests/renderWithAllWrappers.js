@@ -1,15 +1,8 @@
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeManager } from '@myapp/ui/ThemeManager';
 import { NavigationContainer } from '@react-navigation/native';
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: false,
-      cacheTime: 'infinite',
-    },
-  },
-});
+const queryClient = new QueryClient();
 
 const renderWithAllWrappers = children => {
   return (

@@ -1,8 +1,8 @@
 import { FC } from 'react';
+import { ActivityIndicator } from 'react-native';
 
 import { TabScreenProps } from '@myapp/navigation/RootBottomTabs/types';
 import useLogout from '@myapp/query/useLogout';
-import { ActivityIndicator } from 'react-native';
 
 import useUser from '@myapp/hooks/useUser';
 import { UIButtonText, UIButton } from '@myapp/ui/Button';

@@ -1,4 +1,4 @@
-import { useMutation } from 'react-query';
+import { useMutation } from '@tanstack/react-query';
 import { signOut } from 'firebase/auth';
 import { auth } from '@myapp/firebase';
 
