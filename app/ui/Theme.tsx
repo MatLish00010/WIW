@@ -31,6 +31,7 @@ export const theme = {
     background: palette.white,
     buttonText: palette.white,
     buttonBackground: palette.blue,
+    disabledButtonBackground: palette.grey,
     error: palette.red,
     borderColor: palette.black,
   },

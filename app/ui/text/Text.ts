@@ -11,7 +11,7 @@ type Variant = {
 
 type Props = Variant & SpaceProps & TypographyProps;
 
-export const UIText = styled.Text<Props>`
+const Text = styled.Text<Props>`
   font-size: 16px;
   color: ${({ theme }) => theme.colors.text};
   ${props => {
@@ -29,3 +29,5 @@ export const UIText = styled.Text<Props>`
   ${space};
   ${typography}
 `;
+
+export default Text;

@@ -2,7 +2,7 @@ import { useMutation } from '@tanstack/react-query';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@myapp/firebase';
 
-type TUseSignInProps = {
+export type TUseSignInProps = {
   email: string;
   password: string;
 };

@@ -4,7 +4,7 @@ import { space, SpaceProps } from 'styled-system';
 
 type Props = SpaceProps;
 
-export const UIInput = styled.TextInput.attrs({
+const TextInput = styled.TextInput.attrs({
   placeholderTextColor: palette.grey,
 })<Props>`
   color: ${({ theme }) => theme.colors.text};
@@ -14,3 +14,5 @@ export const UIInput = styled.TextInput.attrs({
   padding: ${spacing.S} 0;
   ${space}
 `;
+
+export default TextInput;

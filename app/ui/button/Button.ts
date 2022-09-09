@@ -1,39 +1,21 @@
 import styled, { css } from 'styled-components/native';
-import { fontSize, spacing } from '../Theme';
-import {
-  space,
-  SpaceProps,
-  typography,
-  TypographyProps,
-  flexbox,
-  FlexboxProps,
-  width,
-  WidthProps,
-  color,
-  ColorProps,
-} from 'styled-system';
-
-type TextProps = TypographyProps & ColorProps;
-
-export const UIButtonText = styled.Text<TextProps>`
-  color: ${({ theme }) => theme.colors.buttonText};
-  font-size: ${fontSize.M};
-  ${typography}
-  ${color}
-`;
+import { flexbox, FlexboxProps, space, SpaceProps, width, WidthProps } from 'styled-system';
+import { spacing } from '@myapp/ui/Theme';
+import { TouchableOpacityProps } from 'react-native';
 
 enum ButtonVariants {
   ERROR = 'Error',
   CLEAR = 'Clear',
 }
 
-type ButtonProps = { variant?: ButtonVariants } & SpaceProps & FlexboxProps & WidthProps;
+type ButtonProps = { variant?: ButtonVariants } & SpaceProps & FlexboxProps & WidthProps & TouchableOpacityProps;
 
-export const UIButton = styled.TouchableOpacity<ButtonProps>`
+const Button = styled.TouchableOpacity<ButtonProps>`
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: ${props => (props?.disabled ? props.theme.colors.disabledButtonBackground : '')};
 
   ${space};
   ${flexbox}
@@ -57,4 +39,14 @@ export const UIButton = styled.TouchableOpacity<ButtonProps>`
         `;
     }
   }}
+
+  ${props => {
+    if (props?.disabled) {
+      return css`
+        background-color: ${({ theme }) => theme.colors.disabledButtonBackground};
+      `;
+    }
+  }}
 `;
+
+export default Button;

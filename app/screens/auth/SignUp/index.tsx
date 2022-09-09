@@ -1,75 +1,92 @@
-import { useEffect, useState } from 'react';
 import { ActivityIndicator } from 'react-native';
+import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
 
 import { AuthProps } from '@myapp/navigation/AuthStack/types';
-import { useSignUp } from '@myapp/screens/auth/SignUp/query';
-import { UIView, UIViewContainer } from '@myapp/ui/View';
-import { UIText } from '@myapp/ui/Text';
-import { UIInput } from '@myapp/ui/Fields';
+import { TUseSignUpProps, useSignUp } from '@myapp/screens/auth/SignUp/query';
 import { palette, spacing } from '@myapp/ui/Theme';
-import { UIButton, UIButtonText } from '@myapp/ui/Button';
+import { View, ViewContainer, Text, TextInput, Button, ButtonText } from '@myapp/ui';
+import { schema } from '@myapp/screens/auth/schema';
 
 const SignUp = ({ navigation }: AuthProps<'SignUp'>) => {
   const { mutateAsync: signUpHandler, isLoading } = useSignUp();
 
-  const [error, setError] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  });
 
-  useEffect(() => {
-    setError(false);
-  }, [email, password]);
-
-  const handleSubmit = async () => {
-    if (!email.length || !password.length) {
-      setError(true);
-
-      return;
-    }
-
-    setError(false);
-
+  const onSubmit = async ({ email, password }: TUseSignUpProps) => {
     await signUpHandler({ email, password });
-
-    setEmail('');
-    setPassword('');
 
     navigation.navigate('Root', { screen: 'Account' });
   };
 
   if (isLoading) {
     return (
-      <UIViewContainer width="100%" alignItems="center" justifyContent="center">
+      <ViewContainer testID="loading" width="100%" alignItems="center" justifyContent="center">
         <ActivityIndicator size="large" color={palette.blue} />
-      </UIViewContainer>
+      </ViewContainer>
     );
   }
 
   return (
-    <UIViewContainer justifyContent="center" alignItems="center">
-      <UIView width="100%" alignItems="center" justifyContent="center">
-        <UIText fontSize="20px" fontWeight="600">
+    <ViewContainer testID="signUp-screen" justifyContent="center" alignItems="center">
+      <View width="100%" alignItems="center" justifyContent="center">
+        <Text testID="label" fontSize="20px" fontWeight="600">
           Sign Up
-        </UIText>
-        {error && (
-          <UIText mt={spacing.M} variant="Error">
-            Email and Password are required
-          </UIText>
-        )}
-        <UIInput mb={spacing.M} placeholder="Email" autoCapitalize="none" value={email} onChangeText={setEmail} />
-        <UIInput
-          placeholder="Password"
-          value={password}
-          onChangeText={setPassword}
-          autoCapitalize="none"
-          secureTextEntry={true}
-          mb={spacing.XL}
+        </Text>
+        <Controller
+          control={control}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <TextInput
+              onChangeText={onChange}
+              onBlur={onBlur}
+              value={value}
+              placeholder="Email"
+              autoCapitalize="none"
+            />
+          )}
+          name="email"
         />
-        <UIButton onPress={handleSubmit} width="80%">
-          <UIButtonText>Sign Up</UIButtonText>
-        </UIButton>
-      </UIView>
-    </UIViewContainer>
+        {errors.email?.message && (
+          <Text mt={spacing.S} variant={'Error'}>
+            {errors.email.message}
+          </Text>
+        )}
+
+        <Controller
+          control={control}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <TextInput
+              mt={spacing.M}
+              onChangeText={onChange}
+              onBlur={onBlur}
+              value={value}
+              placeholder="Password"
+              autoCapitalize="none"
+              secureTextEntry={true}
+            />
+          )}
+          name="password"
+        />
+        {errors.password?.message && (
+          <Text mt={spacing.S} variant={'Error'}>
+            {errors.password.message}
+          </Text>
+        )}
+        <Button testID="signUp-btn" disabled={isLoading} mt={spacing.XL} onPress={handleSubmit(onSubmit)} width="80%">
+          <ButtonText>Sign Up</ButtonText>
+        </Button>
+      </View>
+    </ViewContainer>
   );
 };
 

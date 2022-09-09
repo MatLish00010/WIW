@@ -1,14 +1,12 @@
 import { FC } from 'react';
+import { ActivityIndicator } from 'react-native';
 
 import { TabScreenProps } from '@myapp/navigation/RootBottomTabs/types';
 import useLogout from '@myapp/query/useLogout';
-import { ActivityIndicator } from 'react-native';
 
 import useUser from '@myapp/hooks/useUser';
-import { UIButtonText, UIButton } from '@myapp/ui/Button';
-import { UIText } from '@myapp/ui/Text';
 import { palette, spacing } from '@myapp/ui/Theme';
-import { UIView, UIViewContainer } from '@myapp/ui/View';
+import { View, ViewContainer, Text, ButtonText, Button } from '@myapp/ui';
 
 const Account: FC<TabScreenProps<'Account'>> = ({ navigation }) => {
   const { user } = useUser();
@@ -20,31 +18,31 @@ const Account: FC<TabScreenProps<'Account'>> = ({ navigation }) => {
 
   if (isLoading) {
     return (
-      <UIView justifyContent="center" alignItems="center">
+      <View testID="loading" justifyContent="center" alignItems="center">
         <ActivityIndicator size="large" color={palette.blue} />
-      </UIView>
+      </View>
     );
   }
 
   if (!user) {
     return (
-      <UIView alignItems="center" justifyContent="center">
-        <UIText mb={spacing.XL}>You must be logged in to access your account.</UIText>
-        <UIButton onPress={() => navigation.navigate('AuthStackNavigator', { screen: 'SignIn' })}>
-          <UIButtonText>Sign In</UIButtonText>
-        </UIButton>
-      </UIView>
+      <View testID={'account-screen-user-is-not-registered'} alignItems="center" justifyContent="center">
+        <Text mb={spacing.XL}>You must be logged in to access your account.</Text>
+        <Button testID="signIn-btn" onPress={() => navigation.navigate('AuthStackNavigator', { screen: 'SignIn' })}>
+          <ButtonText>Sign In</ButtonText>
+        </Button>
+      </View>
     );
   }
 
   return (
-    <UIViewContainer>
-      <UIText mb={spacing.M}>Account</UIText>
-      <UIText mb={spacing.M}>Email: {user.email}</UIText>
-      <UIButton variant={'Error'} mt={spacing.XXL} onPress={handleLogout}>
-        <UIButtonText>Logout</UIButtonText>
-      </UIButton>
-    </UIViewContainer>
+    <ViewContainer testID={'account-screen-user-is-registered'}>
+      <Text mb={spacing.M}>Account</Text>
+      <Text mb={spacing.M}>Email: {user.email}</Text>
+      <Button testID="logout-btn" variant={'Error'} mt={spacing.XXL} onPress={handleLogout}>
+        <ButtonText>Logout</ButtonText>
+      </Button>
+    </ViewContainer>
   );
 };
 

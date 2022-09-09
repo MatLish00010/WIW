@@ -3,7 +3,7 @@ import { addDoc, collection } from 'firebase/firestore';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '@myapp/firebase';
 
-type TUseSignUpProps = {
+export type TUseSignUpProps = {
   email: string;
   password: string;
 };

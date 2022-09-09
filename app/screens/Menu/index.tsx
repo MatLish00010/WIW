@@ -1,14 +1,13 @@
 import { FC } from 'react';
 
-import { UIViewContainer } from '@myapp/ui/View';
-import { UIText } from '@myapp/ui/Text';
 import { MenuScreenProps } from '@myapp/screens/Menu/types';
+import { Text, ViewContainer } from '@myapp/ui';
 
 const Menu: FC<MenuScreenProps<'Menu'>> = () => {
   return (
-    <UIViewContainer testID="menu-page">
-      <UIText>Menu</UIText>
-    </UIViewContainer>
+    <ViewContainer testID="menu-screen">
+      <Text>Menu</Text>
+    </ViewContainer>
   );
 };
 

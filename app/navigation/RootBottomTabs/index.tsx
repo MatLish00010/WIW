@@ -20,6 +20,7 @@ const RootTabs = () => {
         options={() => ({
           headerShown: false,
           tabBarLabel: 'Home',
+          tabBarTestID: 'tab-home',
           tabBarIcon: ({ color, size }) => <MaterialCommunityIcons name="home" color={color} size={size} />,
         })}
         name="HomeStackNavigator"
@@ -28,6 +29,7 @@ const RootTabs = () => {
       <Tab.Screen
         options={() => ({
           headerShown: false,
+          tabBarTestID: 'tab-account',
           tabBarIcon: ({ color, size }) => <MaterialCommunityIcons name="account" color={color} size={size} />,
         })}
         name="Account"

@@ -1,16 +1,15 @@
 import { FC } from 'react';
 
-import { UIViewContainer } from '@myapp/ui/View';
-import { UIButton, UIButtonText } from '@myapp/ui/Button';
 import { HomeProps } from '@myapp/navigation/HomeStack/types';
+import { ViewContainer, Button, ButtonText } from '@myapp/ui';
 
 const Home: FC<HomeProps<'Home'>> = ({ navigation }) => {
   return (
-    <UIViewContainer testID="home-page">
-      <UIButton testID="menu-button" onPress={() => navigation.navigate('Menu')}>
-        <UIButtonText>Menu</UIButtonText>
-      </UIButton>
-    </UIViewContainer>
+    <ViewContainer testID="home-screen">
+      <Button testID="menu-btn" onPress={() => navigation.navigate('Menu')}>
+        <ButtonText>Menu</ButtonText>
+      </Button>
+    </ViewContainer>
   );
 };
 

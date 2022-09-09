@@ -13,7 +13,7 @@ exports[`Menu Test Page is correct 1`] = `
       },
     ]
   }
-  testID="menu-page"
+  testID="menu-screen"
 >
   <Text
     style={
