@@ -1,0 +1,365 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account Screen Test Screen for user not registered 1`] = `
+<View
+  alignItems="center"
+  justifyContent="center"
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+      },
+    ]
+  }
+  testID="account-screen-user-is-not-registered"
+>
+  <Text
+    mb="32px"
+    style={
+      Array [
+        Object {
+          "color": "#000",
+          "fontSize": 16,
+          "marginBottom": 32,
+        },
+      ]
+    }
+  >
+    You must be logged in to access your account.
+  </Text>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#2f95dc",
+        "borderRadius": 8,
+        "display": "flex",
+        "justifyContent": "center",
+        "opacity": 1,
+        "paddingBottom": 16,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 16,
+      }
+    }
+    testID="signIn-btn"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontSize": 16,
+          },
+        ]
+      }
+    >
+      Sign In
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Account Screen Test Screen for user registered 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "height": "100%",
+        "paddingBottom": 32,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 40,
+      },
+    ]
+  }
+  testID="account-screen-user-is-registered"
+>
+  <Text
+    mb="16px"
+    style={
+      Array [
+        Object {
+          "color": "#000",
+          "fontSize": 16,
+          "marginBottom": 16,
+        },
+      ]
+    }
+  >
+    Account
+  </Text>
+  <Text
+    mb="16px"
+    style={
+      Array [
+        Object {
+          "color": "#000",
+          "fontSize": 16,
+          "marginBottom": 16,
+        },
+      ]
+    }
+  >
+    Email: 
+    xxx@xxx.xxx
+  </Text>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#eb0a3c",
+        "borderRadius": 8,
+        "display": "flex",
+        "justifyContent": "center",
+        "marginTop": 40,
+        "opacity": 1,
+        "paddingBottom": 16,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 16,
+      }
+    }
+    testID="logout-btn"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontSize": 16,
+          },
+        ]
+      }
+    >
+      Logout
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Account Screen Test Screen is loading 1`] = `
+<View
+  alignItems="center"
+  justifyContent="center"
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+      },
+    ]
+  }
+  testID="loading"
+>
+  <ActivityIndicator
+    color="#2f95dc"
+    size="large"
+  />
+</View>
+`;
+
+exports[`Account screen test Screen for user not registered 1`] = `
+<View
+  alignItems="center"
+  justifyContent="center"
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+      },
+    ]
+  }
+  testID="account-screen-user-is-not-registered"
+>
+  <Text
+    mb="32px"
+    style={
+      Array [
+        Object {
+          "color": "#000",
+          "fontSize": 16,
+          "marginBottom": 32,
+        },
+      ]
+    }
+  >
+    You must be logged in to access your account.
+  </Text>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#2f95dc",
+        "borderRadius": 8,
+        "display": "flex",
+        "justifyContent": "center",
+        "opacity": 1,
+        "paddingBottom": 16,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 16,
+      }
+    }
+    testID="signIn-btn"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontSize": 16,
+          },
+        ]
+      }
+    >
+      Sign In
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Account screen test Screen for user registered 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "height": "100%",
+        "paddingBottom": 32,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 40,
+      },
+    ]
+  }
+  testID="account-screen-user-is-registered"
+>
+  <Text
+    mb="16px"
+    style={
+      Array [
+        Object {
+          "color": "#000",
+          "fontSize": 16,
+          "marginBottom": 16,
+        },
+      ]
+    }
+  >
+    Account
+  </Text>
+  <Text
+    mb="16px"
+    style={
+      Array [
+        Object {
+          "color": "#000",
+          "fontSize": 16,
+          "marginBottom": 16,
+        },
+      ]
+    }
+  >
+    Email: 
+    xxx@xxx.xxx
+  </Text>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#eb0a3c",
+        "borderRadius": 8,
+        "display": "flex",
+        "justifyContent": "center",
+        "marginTop": 40,
+        "opacity": 1,
+        "paddingBottom": 16,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 16,
+      }
+    }
+    testID="logout-btn"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontSize": 16,
+          },
+        ]
+      }
+    >
+      Logout
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Account screen test Screen is loading 1`] = `
+<View
+  alignItems="center"
+  justifyContent="center"
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+      },
+    ]
+  }
+  testID="loading"
+>
+  <ActivityIndicator
+    color="#2f95dc"
+    size="large"
+  />
+</View>
+`;
