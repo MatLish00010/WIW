@@ -20,7 +20,13 @@ const HomeStackNavigator = () => {
         name="Home"
         component={Home}
       />
-      <HomeStack.Screen name="Menu" component={Menu} />
+      <HomeStack.Screen
+        options={{
+          title: 'Kitchen',
+        }}
+        name="Menu"
+        component={Menu}
+      />
     </HomeStack.Navigator>
   );
 };
