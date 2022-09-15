@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react-native';
 import Menu from '@myapp/screens/Menu';
 import testingWrapper from '@myapp/utils/tests/tistingWrapper';
 import useKitchens from '@myapp/query/useKitchens';
-import { kitchens } from '@myapp/screens/Menu/__tests__/mockData';
+import { kitchens } from '@myapp/screens/Menu/mockData/kitchens';
 
 jest.mock('@myapp/query/useKitchens');
 
@@ -29,7 +29,7 @@ describe('Menu Test', () => {
 
     expect(kitchensList).toBeTruthy();
 
-    expect(screen.getAllByTestId('kitchen-item')).toBe(2);
+    expect(screen.getAllByTestId('kitchen-item').length).toBe(2);
 
     expect(screen.getByText('test1')).toBeTruthy();
     expect(screen.getByText('test2')).toBeTruthy();

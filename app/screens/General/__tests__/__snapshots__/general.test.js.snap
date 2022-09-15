@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`General Screen Test Screen is correct 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "height": "100%",
+        "paddingBottom": 32,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 40,
+      },
+    ]
+  }
+  testID="general-screen"
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#2f95dc",
+        "borderRadius": 8,
+        "display": "flex",
+        "justifyContent": "center",
+        "opacity": 1,
+        "paddingBottom": 16,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 16,
+      }
+    }
+    testID="menu-btn"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontSize": 16,
+          },
+        ]
+      }
+    >
+      Menu
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Home Screen Test Screen is correct 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "height": "100%",
+        "paddingBottom": 32,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 40,
+      },
+    ]
+  }
+  testID="general-screen"
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#2f95dc",
+        "borderRadius": 8,
+        "display": "flex",
+        "justifyContent": "center",
+        "opacity": 1,
+        "paddingBottom": 16,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 16,
+      }
+    }
+    testID="menu-btn"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontSize": 16,
+          },
+        ]
+      }
+    >
+      Menu
+    </Text>
+  </View>
+</View>
+`;

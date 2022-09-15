@@ -1,11 +1,11 @@
 import { CompositeScreenProps, NavigatorScreenParams } from '@react-navigation/native';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import { HomeStackParamList } from '@myapp/navigation/HomeStack/types';
+import { GeneralStackParamList } from '@myapp/navigation/GeneralStack/types';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { StackParamList } from '@myapp/navigation/types';
 
 export type RootTabParamList = {
-  HomeStackNavigator: NavigatorScreenParams<HomeStackParamList>;
+  GeneralStackNavigator: NavigatorScreenParams<GeneralStackParamList>;
   Account: undefined;
 };
 

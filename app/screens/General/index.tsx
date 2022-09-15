@@ -1,11 +1,11 @@
 import { FC } from 'react';
 
-import { HomeProps } from '@myapp/navigation/HomeStack/types';
+import { GeneralProps } from '@myapp/navigation/GeneralStack/types';
 import { ViewContainer, Button, ButtonText } from '@myapp/ui';
 
-const Home: FC<HomeProps<'Home'>> = ({ navigation }) => {
+const General: FC<GeneralProps<'General'>> = ({ navigation }) => {
   return (
-    <ViewContainer testID="home-screen">
+    <ViewContainer testID="general-screen">
       <Button testID="menu-btn" onPress={() => navigation.navigate('Menu')}>
         <ButtonText>Menu</ButtonText>
       </Button>
@@ -13,4 +13,4 @@ const Home: FC<HomeProps<'Home'>> = ({ navigation }) => {
   );
 };
 
-export default Home;
+export default General;

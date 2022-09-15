@@ -9,9 +9,9 @@ const linking: LinkingOptions<StackParamList> = {
     screens: {
       Root: {
         screens: {
-          HomeStackNavigator: {
+          GeneralStackNavigator: {
             screens: {
-              Home: 'Home',
+              General: 'General',
               Menu: 'Menu',
             },
           },

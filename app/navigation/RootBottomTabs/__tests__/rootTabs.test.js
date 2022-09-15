@@ -6,17 +6,17 @@ import testingWrapper from '@myapp/utils/tests/tistingWrapper';
 jest.mock('@myapp/hooks/useUser');
 
 describe('Root Tabs Test', () => {
-  test('Initial screen is Home', () => {
+  test('Initial screen is General', () => {
     render(testingWrapper(<RootTabs />));
-    expect(screen.getByTestId('home-screen')).toBeTruthy();
+    expect(screen.getByTestId('general-screen')).toBeTruthy();
   });
-  test('Tab Home redirects to home screen', () => {
+  test('Tab General redirects to home screen', () => {
     render(testingWrapper(<RootTabs />));
 
-    const homeTab = screen.getByTestId('tab-home');
-    fireEvent.press(homeTab);
+    const generalTab = screen.getByTestId('tab-general');
+    fireEvent.press(generalTab);
 
-    expect(screen.getByTestId('home-screen')).toBeTruthy();
+    expect(screen.getByTestId('general-screen')).toBeTruthy();
   });
   test('Tab Account redirects to Account screen for not registered user', () => {
     useUser.mockReturnValue({
