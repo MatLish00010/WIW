@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import General from '@myapp/screens/General';
-import Menu from '@myapp/screens/Menu';
 import { GeneralStackParamList } from '@myapp/navigation/GeneralStack/types';
+import MenuStackNavigator from '@myapp/navigation/MenuStack';
 
 const GeneralStack = createNativeStackNavigator<GeneralStackParamList>();
 
@@ -22,10 +22,10 @@ const GeneralStackNavigator = () => {
       />
       <GeneralStack.Screen
         options={{
-          title: 'Kitchen',
+          headerShown: false,
         }}
-        name="Menu"
-        component={Menu}
+        name="MenuStackNavigator"
+        component={MenuStackNavigator}
       />
     </GeneralStack.Navigator>
   );

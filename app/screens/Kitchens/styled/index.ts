@@ -1,16 +1,16 @@
 import styled from 'styled-components/native';
 import { palette, spacing } from '@myapp/ui/Theme';
 
-export const MenuList = styled.FlatList`
+export const List = styled.FlatList`
   padding: ${spacing.M};
 `;
 
-export const MenuItem = styled.View`
+export const Item = styled.View`
   margin-bottom: ${spacing.XL};
   border-radius: 20px;
 `;
 
-export const MenuItemBtn = styled.TouchableOpacity`
+export const ItemBtn = styled.TouchableOpacity`
   padding: ${spacing.XL};
   background-color: #00000c79;
   align-items: center;
@@ -18,7 +18,7 @@ export const MenuItemBtn = styled.TouchableOpacity`
   color: ${palette.white};
 `;
 
-export const MenuItemBtnText = styled.Text`
+export const ItemBtnText = styled.Text`
   color: ${palette.white};
   font-weight: 500;
   text-transform: uppercase;

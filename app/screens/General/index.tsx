@@ -6,7 +6,7 @@ import { ViewContainer, Button, ButtonText } from '@myapp/ui';
 const General: FC<GeneralProps<'General'>> = ({ navigation }) => {
   return (
     <ViewContainer testID="general-screen">
-      <Button testID="menu-btn" onPress={() => navigation.navigate('Menu')}>
+      <Button testID="menu-btn" onPress={() => navigation.navigate('MenuStackNavigator', { screen: 'Kitchens' })}>
         <ButtonText>Menu</ButtonText>
       </Button>
     </ViewContainer>

@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react-native';
 
-import Menu from '@myapp/screens/Menu';
 import testingWrapper from '@myapp/utils/tests/tistingWrapper';
 import useKitchens from '@myapp/query/useKitchens';
-import { kitchens } from '@myapp/screens/Menu/mockData/kitchens';
+import { kitchens } from '@myapp/screens/Kitchens/mockData/kitchens';
+import Kitchens from '@myapp/screens/Kitchens';
 
 jest.mock('@myapp/query/useKitchens');
 
-describe('Menu Test', () => {
+describe('Kitchens Test', () => {
   beforeEach(() => {
     useKitchens.mockReturnValue({
       data: [],
@@ -15,7 +15,7 @@ describe('Menu Test', () => {
     });
   });
   test('Screen is loading', () => {
-    render(testingWrapper(<Menu />));
+    render(testingWrapper(<Kitchens />));
     expect(screen.getByTestId('loading')).toBeTruthy();
   });
   test('Screen with data', () => {
@@ -23,7 +23,7 @@ describe('Menu Test', () => {
       data: kitchens,
       isLoading: false,
     });
-    render(testingWrapper(<Menu />));
+    render(testingWrapper(<Kitchens />));
 
     const kitchensList = screen.getByTestId('kitchens-list');
 

@@ -12,7 +12,12 @@ const linking: LinkingOptions<StackParamList> = {
           GeneralStackNavigator: {
             screens: {
               General: 'General',
-              Menu: 'Menu',
+              MenuStackNavigator: {
+                screens: {
+                  Kitchens: 'Kitchens',
+                  Menu: 'Menu',
+                },
+              },
             },
           },
           Account: 'Account',
